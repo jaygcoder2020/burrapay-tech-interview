@@ -43,6 +43,12 @@ pnpm dev
 # Build and run production
 pnpm build
 pnpm start
+
+# Testing
+pnpm test              # Run tests once
+pnpm test:watch        # Run tests in watch mode
+pnpm test:ui           # Run tests with UI
+pnpm test:coverage     # Run tests with coverage
 ```
 
 ## 📁 Project Structure
@@ -150,6 +156,45 @@ const tournament = pipe(
 
 ## 🧪 Testing Your Implementation
 
+The project includes comprehensive integration tests using **Vitest** and **Supertest**.
+
+### Running Tests
+
+```bash
+# Run all tests
+pnpm test
+
+# Run tests in watch mode (recommended during development)
+pnpm test:watch
+
+# Run tests with interactive UI
+pnpm test:ui
+
+# Run tests with coverage report
+pnpm test:coverage
+```
+
+### Test Coverage
+
+The integration tests cover:
+
+- ✅ **Health check endpoint**
+- ✅ **Tournament creation and management**
+- ✅ **Pokemon validation via PokeAPI**
+- ✅ **Player creation with Pokemon data**
+- ✅ **Error handling** (invalid Pokemon, missing tournaments)
+- ✅ **Edge cases** (malformed requests, network issues)
+- ✅ **Pokemon API integration** (real API calls)
+
+### Test Structure
+
+```
+src/test/
+├── setup.ts           # Test environment setup
+├── helpers.ts         # Test utilities
+└── integration.test.ts # Main integration tests
+```
+
 ### Manual Testing Commands:
 
 1. **Create a Tournament:**
@@ -189,6 +234,7 @@ You will be evaluated on:
 4. **API Design**: RESTful endpoints with appropriate status codes
 5. **Pokemon Integration**: Creative and robust integration with PokeAPI
 6. **Functional Programming**: Demonstrating FP principles and composition
+7. **Testing**: All integration tests should pass (`pnpm test`)
 
 ## 🎉 Bonus Points
 

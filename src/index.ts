@@ -1,6 +1,5 @@
-// Entry point for the application
-// TODO for interviewee: Import and call the start function
+// Entry point for the Pokemon Tournament API
+import { start } from './server.ts'
 
-// HINT: Uncomment the lines below when ready to test
-// import { start } from './server'
-// start()
+// Start the server
+start()

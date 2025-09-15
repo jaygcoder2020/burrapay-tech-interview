@@ -2,7 +2,7 @@ import { Option } from 'fp-ts/lib/Option'
 import { Either } from 'fp-ts/lib/Either'
 import * as O from 'fp-ts/lib/Option'
 import * as E from 'fp-ts/lib/Either'
-import { Tournament, Player } from '../types'
+import { Tournament, Player } from '../types/index.ts'
 import { v4 as uuidv4 } from 'uuid'
 
 // Storage interfaces
