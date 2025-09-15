@@ -37,7 +37,12 @@ export const getTournament = (id: string): Option<Tournament> => {
 }
 
 // Player operations
-export const createPlayer = (name: string, tournamentId: string): Either<string, Player> => {
+export const createPlayer = (name: string, tournamentId: string, pokemonData: {
+  id: number
+  types: string[]
+  height: number
+  weight: number
+}): Either<string, Player> => {
   // Check if tournament exists
   const tournament = getTournament(tournamentId)
   
@@ -48,7 +53,8 @@ export const createPlayer = (name: string, tournamentId: string): Either<string,
   const player: Player = {
     id: uuidv4(),
     name,
-    tournamentId
+    tournamentId,
+    pokemonData
   }
   
   storage.players.set(player.id, player)

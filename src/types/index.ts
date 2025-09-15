@@ -7,11 +7,30 @@ export interface Tournament {
   createdAt: Date
 }
 
-// Player interface
+// Player interface (Pokemon only!)
 export interface Player {
   id: string
   name: string
   tournamentId: string
+  pokemonData: {
+    id: number
+    types: string[]
+    height: number
+    weight: number
+  }
+}
+
+// Pokemon API response type (for reference)
+export interface PokemonApiResponse {
+  id: number
+  name: string
+  types: Array<{
+    type: {
+      name: string
+    }
+  }>
+  height: number
+  weight: number
 }
 
 // Request types for creating tournaments
