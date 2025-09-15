@@ -22,8 +22,12 @@ As part of this technical assessment, **ONLY Pokemon can be added as players**. 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v18+)
-- PNPM
+- **Node.js v22+** (Required for Fastify v5 compatibility)
+  - Use `nvm use 22` to switch to Node.js 22
+  - Verify with `node --version` (should show v22.x.x)
+- **PNPM** (Package manager)
+  - Install globally: `npm install -g pnpm`
+  - Or use `corepack enable` if using Node.js 16.10+
 
 ### Installation
 ```bash
@@ -202,3 +206,26 @@ You will be evaluated on:
 - **Time management**: Focus on core functionality first, then Pokemon integration
 
 Good luck! 🚀
+
+## 🔧 Troubleshooting
+
+### Node.js Version Issues
+If you encounter errors like `diagnostics.tracingChannel is not a function`:
+
+1. **Check Node.js version**: `node --version`
+2. **Switch to Node.js 22**: `nvm use 22`
+3. **Install Node.js 22** if not available:
+   ```bash
+   nvm install 22
+   nvm use 22
+   ```
+4. **Reinstall dependencies** after switching:
+   ```bash
+   pnpm install
+   ```
+
+### PNPM Issues
+If PNPM commands fail:
+- Install PNPM: `npm install -g pnpm`
+- Or enable corepack: `corepack enable`
+- Clear cache: `pnpm store prune`
